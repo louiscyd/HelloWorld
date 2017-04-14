@@ -13,8 +13,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView txtview = (TextView) findViewById(R.id.txtview);
         Button bb   = (Button) findViewById(R.id.button1);
-
+        txtview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+                startActivity(intent);
+            }
+        });
         bb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
